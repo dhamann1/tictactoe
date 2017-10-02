@@ -1,0 +1,26 @@
+body{
+    text-align: center; 
+    font-family: 'Gochi Hand'
+}
+
+
+table {
+    border: 1px solid black;
+    margin: 50px auto; 
+    
+}
+
+
+.bCell {
+    height: 90px;
+    width: 90px;
+    padding-top: 10px; 
+    border: 1px solid #989898;
+}
+
+
+
+button {
+    text-align: center;
+
+}
