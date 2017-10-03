@@ -11,12 +11,11 @@ table {
 }
 
 td {
-    border: 1px solid #615d6c;
+    border: 1px solid grey;
     width: 100px;
     height: 100px;
+    font-size: 70px; 
 }
-
-
 
 
 .reset {

@@ -9,7 +9,8 @@ var state = [null, null, null, null, null, null, null, null, null];
 document.querySelector('table').addEventListener('click', handleClick);
 document.querySelector('button').addEventListener('click', init);
 var boxes = document.querySelectorAll('td');
-console.dir(boxes);
+var headline = document.querySelector('h2');
+
 /*----- functions -----*/
 
 function handleClick(evt){
@@ -30,14 +31,19 @@ function handleClick(evt){
 
 
 function checkWin (state){
-    
+
 };
 
 
 
 function render(state){
+    if(currentPlayer === 0){
+        headline.textContent = "Player 1's Turn!";
+    } else if (currentPlayer === 1){
+        headline.textContent = "Player 2's Turn!";
+    } 
     state.forEach(function(elem, index) {
-        boxes[index].innerHTML = state[index];
+        boxes[index].textContent = state[index];
     });
 };
 
@@ -45,4 +51,5 @@ function init(evt){
     state = [null, null, null, null, null, null, null, null, null];
     render(state);
     currentPlayer = 0; 
+    headline.textContent = "Click to Begin!"; 
 }
