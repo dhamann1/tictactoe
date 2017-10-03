@@ -51,5 +51,5 @@ function init(evt){
     state = [null, null, null, null, null, null, null, null, null];
     render(state);
     currentPlayer = 0; 
-    headline.textContent = "Click to Begin!"; 
+    headline.textContent = "Player 1: Click to Begin!"; 
 }
