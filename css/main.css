@@ -10,17 +10,16 @@ table {
     
 }
 
-
-.bCell {
-    height: 90px;
-    width: 90px;
-    padding-top: 10px; 
-    border: 1px solid #989898;
+td {
+    border: 1px solid #615d6c;
+    width: 100px;
+    height: 100px;
 }
 
 
 
-button {
+
+.reset {
     text-align: center;
 
 }

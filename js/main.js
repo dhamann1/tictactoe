@@ -1,35 +1,48 @@
 /*----- constants -----*/
 /*----- app's state (variables) -----*/
 
-currentPlayer = 0; 
-var turn; 
-var player1Selections = [];
-var player2Selections = []; 
-
-
-
+var currentPlayer;
+var state = [null, null, null, null, null, null, null, null, null];
 
 /*----- cached element references -----*/
 /*----- event listeners -----*/
-var box = document.querySelector('table');
 document.querySelector('table').addEventListener('click', handleClick);
-document.querySelector('button').addEventListener('click', reset)
+document.querySelector('button').addEventListener('click', init);
+var boxes = document.querySelectorAll('td');
+console.dir(boxes);
 /*----- functions -----*/
 
 function handleClick(evt){
-    console.dir(evt)     
-   if (currentPlayer === 0 && evt.target.textContent !== "0"){
-        evt.target.textContent = "X";
-        currentPlayer = 1;  
-    } else if (currentPlayer === 1 && evt.target.textContent !== "X") {
-        evt.target.textContent = "0";
+    if(state[evt.target.id]){
+        return; 
+    }
+    else if(currentPlayer === 0){
+        state[evt.target.id] = "X";
+        currentPlayer = 1; 
+        console.log(state);
+    } else {
+        state[evt.target.id] = "0"; 
         currentPlayer = 0; 
-    } 
+        console.log(state);
+    }
+    render(state);
 };
 
-function reset(evt){
-    var tds = document.getElementsByTagName('td');
-    for(var i = 0; i < tds.length; i++) {
-        tds[i].textContent = '';
-    }
+
+function checkWin (state){
+    
+};
+
+
+
+function render(state){
+    state.forEach(function(elem, index) {
+        boxes[index].innerHTML = state[index];
+    });
+};
+
+function init(evt){
+    state = [null, null, null, null, null, null, null, null, null];
+    render(state);
+    currentPlayer = 0; 
 }
